@@ -1,69 +1,126 @@
-/* 전체적인 기본 스타일 설정 */
+/* 전체 스타일 리셋 및 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e8f5e9; /* 연한 녹색 배경 */
-    color: #2e7d32; /* 진한 초록색 텍스트 */
-    margin: 0;
-    padding: 20px;
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  line-height: 1.6;
+  color: #4a3600;
+  background-color: #fff9e6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
 }
 
-h1, h2, h3 {
-    text-align: center;
-    color: #1b5e20;
+/* 제목 스타일 */
+h1 {
+  font-size: 2.5rem;
+  color: #ff8c00;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ffb700;
+  padding-bottom: 0.5rem;
 }
 
-/* 링크 스타일: 버튼 형태로 디자인 */
-.button {
-    display: inline-block;
-    background-color: #388e3c; /* 중간 녹색 */
-    color: white;
-    padding: 10px 20px;
-    margin: 10px 0;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+h2 {
+  font-size: 1.8rem;
+  color: #e67700;
+  margin-bottom: 1rem;
 }
 
-/* 마우스 호버 시 색상 변화 */
-.button:hover {
-    background-color: #66bb6a; /* 밝은 녹색 */
-}
-
-/* 리스트 스타일링 */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-li {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #c8e6c9; /* 밝은 녹색 배경 */
-    border-radius: 12px;
-}
-
-/* 이미지 스타일링 */
-img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 감상평 텍스트 스타일 */
 h3 {
-    font-weight: normal;
-    line-height: 1.6;
-    padding: 10px;
-    background-color: #a5d6a7; /* 연한 초록색 배경 */
-    border-radius: 8px;
+  font-size: 1.3rem;
+  color: #663c00;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
 }
 
-/* 목차 페이지 스타일 */
-p {
-    text-align: center;
+/* 버튼 스타일 */
+.button {
+  display: inline-block;
+  background-color: #ff9f1a;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(204, 122, 0, 0.3);
+}
+
+.button:hover {
+  background-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(204, 122, 0, 0.4);
+}
+
+/* 목차 페이지 특별 스타일 */
+body:has(h1:contains("독서록")) {
+  background-color: #fffaeb;
+  text-align: center;
+}
+
+body:has(h1:contains("독서록")) .button {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* 책 상세 페이지 스타일 */
+ul {
+  list-style-type: none;
+  margin: 2rem 0;
+}
+
+ul li h3 {
+  font-weight: bold;
+  color: #ff9f1a;
+  margin-top: 1.5rem;
+}
+
+ul li + h3 {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 이미지 스타일 */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0 2rem 0;
+  box-shadow: 0 4px 10px rgba(204, 122, 0, 0.15);
+  display: block;
+}
+
+/* 책 페이지에서 목차 버튼 위치 조정 */
+h1 .button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  float: right;
+  margin-top: 0.5rem;
+}
+
+/* 감상평 부분 스타일 */
+h3:contains("감상평") + h3 {
+  background-color: #fff2d1;
+  padding: 1rem;
+  border-left: 4px solid #ffb700;
+  border-radius: 0 5px 5px 0;
+}
+
+/* AI 평가 스타일 */
+h3:contains("AI평가") + h3 {
+  background-color: #ffe7ba;
+  padding: 1.5rem;
+  border-radius: 5px;
+  line-height: 1.8;
 }
